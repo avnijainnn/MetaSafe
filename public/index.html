@@ -18,7 +18,10 @@
             <a href="features.html">Features</a>
             <a href="communities.html">Community</a>
             <a href="support.html">Support</a>
-            <a href="#" class="cta-button nav-button">Sign Up / Login</a>
+            <a href="auth.html" id="authButton" class="cta-button nav-button">Sign Up / Login</a>
+            <a href="#" id="logoutButton" class="cta-button nav-button" style="display: none;">Logout</a>
+
+            <!-- <a href="auth.html" class="cta-button nav-button">Sign Up / Login</a> -->
         </nav>
     </header>
     
@@ -151,6 +154,51 @@
 
 <canvas id="particles"></canvas>
 <script src="script.js"></script>
+<script type="module">
+    // Import Firebase Modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+    // Firebase Config
+    const firebaseConfig = {
+        apiKey: "AIzaSyCKpR6ZI19PAK7A8egQLdtjRv_SHhBa5YY",
+        authDomain: "metasafe-ce361.firebaseapp.com",
+        projectId: "metasafe-ce361",
+        storageBucket: "metasafe-ce361.firebasestorage.app",
+        messagingSenderId: "1057836093697",
+        appId: "1:1057836093697:web:5356abbcfffabb3c580b00",
+        measurementId: "G-71WZ5JM5Q5"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Get Buttons
+    const authButton = document.getElementById("authButton");
+    const logoutButton = document.getElementById("logoutButton");
+
+    // Check Auth State
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is logged in
+            authButton.style.display = "none";
+            logoutButton.style.display = "block";
+        } else {
+            // User is not logged in
+            authButton.style.display = "block";
+            logoutButton.style.display = "none";
+        }
+    });
+
+    // Logout User
+    logoutButton.addEventListener("click", async () => {
+        await signOut(auth);
+        window.location.href = "index.html"; // Refresh page after logout
+    });
+
+</script>
+
 
 </body>
 
