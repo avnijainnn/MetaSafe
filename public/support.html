@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Metaसेफ़</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="support.css"> <!-- Separate CSS for this page -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script defer src="chat.js"></script> <!-- JavaScript for live chat -->
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <span class="meta">Meta</span><span class="highlight">सेफ़</span>
+            </a>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="community.html">Community</a>
+            <a href="support.html" class="active">Support</a>
+            <a href="login.html" class="cta-button">Sign Up / Login</a>
+        </nav>
+    </header>
+
+    <!-- Support Page Main Section -->
+    <main class="support-container">
+        <h1 class="section-title">How Can We Help?</h1>
+        <p class="subtitle">Need assistance? Reach out to us below.</p>
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="How can we help you?" rows="5" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How can I report an issue?</h3>
+                <p>Use the contact form above or email us at <a href="mailto:support@metasafe.com">support@metasafe.com</a>.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I reset my password?</h3>
+                <p>Go to the <a href="reset.html">Reset Password</a> page and follow the instructions.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer live support?</h3>
+                <p>Yes, click the <strong>Live Chat</strong> button below for instant help.</p>
+            </div>
+        </section>
+
+        <!-- Social Media & Contact Info -->
+        <section class="contact-info">
+            <h2>Connect with Us</h2>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:support@metasafe.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+
+        <!-- Live Chat Button -->
+        <button class="live-chat-button" onclick="toggleChat()">💬 Live Chat</button>
+
+        <!-- Chatbox -->
+        <div id="chatbox" class="chatbox">
+            <div class="chat-header">
+                <span>Live Chat - Metaसेफ़ Support</span>
+                <button onclick="toggleChat()">✖</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="bot-message">Hello! How can we assist you today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2023 Metaसेफ़. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

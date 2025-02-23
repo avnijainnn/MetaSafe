@@ -1,0 +1,403 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Enhanced Background Animation */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    background: linear-gradient(120deg, #3b82f6, #1e40af, #9333ea, #ec4899);
+    background-size: 500% 500%;
+    animation: gradientBG 12s ease-in-out infinite;
+}
+
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 75%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 25%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced Background Animation */
+/* body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    background: linear-gradient(-45deg, #3b82f6, #1e40af, #9333ea, #ec4899, #ff3d00, #ff9800);
+    background-size: 400% 400%;
+    animation: gradientWave 10s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+} */
+
+/* Moving Gradient Effect */
+/* Subtle Floating Glow Effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 60%);
+    transform: translate(-50%, -50%);
+    animation: floatingGlow 6s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+/* Floating Glow Effect Animation */
+@keyframes floatingGlow {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    100% { transform: translate(-50%, -48%) scale(1.2); opacity: 0.7; }
+}
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #facc15;
+}
+
+/* Navbar */
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 75%;
+    margin-right: 40px;
+}
+
+/* Navbar Links */
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Navbar Hover Effects */
+.nav a:hover {
+    color: #facc15;
+}
+
+/* Underline Animation */
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #facc15;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* CTA Button */
+/* Navbar CTA Button */
+.cta-button {
+    background: #ec4899;
+    padding: 12px 24px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    border: none; /* Remove default border */
+}
+
+/* Glow Effect on Hover */
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.8); /* Glowing pink effect */
+    background: #db2777; 
+    color: white !important;/* Slightly darker pink */
+}
+
+/* Remove Yellow Underline from CTA Button */
+.cta-button::after {
+    display: none !important; /* Prevent underline animation */
+}
+
+/* Main Content */
+.main {
+    margin-top: 140px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Website Name */
+.website-name {
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.website-name .meta,
+.logo .meta {
+    color: white;
+}
+
+.website-name .highlight,
+.logo .highlight {
+    color: #facc15;
+}
+
+/* Headline */
+h2.main-heading {
+    font-size: 40px;
+    font-weight: bold;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+/* Image */
+.image-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 90%;
+    max-width: 750px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features {
+    text-align: center;
+    padding: 80px 10%;
+    background: linear-gradient(120deg, #1e3a8a, #1e40af, #9333ea);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease-in-out infinite;
+    color: white;
+}
+
+/* Feature Grid */
+.feature-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Feature Card */
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Icons */
+.icon {
+    font-size: 40px;
+    color: #facc15;
+    margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 60px 10%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.testimonials.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Testimonial Cards */
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+/* Footer Section */
+.footer {
+    background: rgba(0, 0, 0, 0.6); /* Slight transparency */
+    padding: 60px 10%;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Footer Layout */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+/* Footer Logo */
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.footer-logo .meta {
+    color: white; /* "Meta" in white */
+}
+
+.footer-logo .highlight {
+    color: #facc15; /* "सेफ़" in yellow */
+}
+/* Footer Text */
+.footer-column p {
+    font-size: 14px;
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Quick Links */
+.footer-column ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #d1d5db;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-column ul li a:hover {
+    color: #facc15;
+}
+
+/* Social Media Icons */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: #d1d5db;
+    font-size: 20px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    color: #facc15;
+    transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+/* Footer Bottom Links */
+.footer-bottom a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-bottom a:hover {
+    color: #facc15;
+}
